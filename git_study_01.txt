@@ -1,0 +1,47 @@
+1. 윈도우git 기준 경로
+루트	: C:\Program Files\Git
+홈	: C:\Users\사용자계정
+ 
+
+2. git 환경설정
+시스템 설정	: 컴퓨터에 로그인 하는 모든 사용자에게 적용되는 시스템 설정 파일. (수정 시 관리자 권한 필요)
+C:\Program Files\Git\etc\gitconfig
+$ git config --system user.name "Username"
+$ git config --system user.email "Useremail@example.com"
+
+global 설정	: 현재 컴퓨터에 로그인된 사용자의 모든 저장소에 적용되는 설정 파일.
+C:\Users\사용자계정\.gitconfig (홈의 .gitconfig 파일)
+$ git config --global user.name "Username"
+$ git config --global user.email "Useremail@example.com"
+홈 디렉터리에서 cat ~/.gitconfig 로 설정한 이름, 이메일 확인 가능.
+
+local 설정	: 현재 작업중인 저장소에만 적용되는 설정 파일
+현 프로젝트 디렉토리\.git\config
+$ git config (--local) user.name "Username"
+$ git config (--local) user.email "Useremail@example.com"
+
+보통 global만 설정하고 사용한다.
+
+
+2-1. 설정 확인
+git config --list
+또는
+git config user.name
+git config user.email
+
+설정은 local > global > system 순으로 우선된다.
+
+
+2-2. 설정 삭제
+global 설정을 삭제
+$ git config --global --unset user.name
+$ git config --global --unset user.email
+
+local 설정 삭제
+$ git config --unset user.name
+$ git config --unset user.email
+
+
+참조
+https://git-scm.com/book/ko/v2/시작하기-Git-최초-설정
+https://www.lainyzine.com/ko/article/how-to-set-git-repository-username-and-email/

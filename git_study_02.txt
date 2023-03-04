@@ -1,0 +1,74 @@
+1. 시작
+git으로 관리하고자 하는 프로젝트의 디렉터리에서 git init 실행.
+$ git init
+
+Git 저장소를 관리하는 .git 디렉터리가 생성된다.
+
+$ ls -al 로 폴더 확인 시 현재는 빈 디렉터리.
+total 12
+drwxr-xr-x 1 san 197609 0 Mar  4 14:43 ./
+drwxr-xr-x 1 san 197609 0 Jan  5 23:06 ../
+drwxr-xr-x 1 san 197609 0 Mar  4 14:43 .git/
+
+$ git status 로 Git 저장소 상태 확인
+On branch main
+No commits yet
+nothing to commit (create/copy files and use "git add" to track)
+
+$ git log 로 커밋 로그 확인
+fatal: your current branch 'main' does not have any commits yet
+
+
+2. 커밋 : git add, git status, git commit
+git init으로 저장소 초기화 후, 보통 첫 커밋까지를 초기화 작업이라고 말한다.
+Git에서 첫 커밋은 루트 커밋으로 특별하게 취급하기 때문. 루트 커밋은 rebase 하는 방법, git add로 추가한 내용을 되돌리는 방법도 다르다.
+따라서 첫 커밋은 Git 저장소에서 필수적으로 사용하는 .gitignore 빈파일을 만들어주는 게 일반적.
+.gitignore은 Git 저장소에서 관리하지 않을 파일들을 나열해놓는 특수 용도로 사용되는 설정 파일.
+
+$ touch .gitignore
+$ git add .gitignore
+$ git commit -m "Initialize Git repository"  
+[main (root-commit) fab68e7] Initialize Git repository
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 .gitignore
+
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+$ git log
+commit fab68e74f7fafa90961bce25111779d1fb96f943 (HEAD -> main)
+Author: clintkslee <soh7174@gmail.com>
+Date:   Sat Mar 4 14:55:56 2023 +0900
+
+    Initialize Git repository 
+로그를 보면 커밋 시 작성한 스트링 부분이 설명으로 나타난다. (-m 옵션은 설명을 작성한다는 뜻)
+
+
+3. Github 원격 저장소에 Push
+로컬로만 작업할 경우 2의 방법으로 저장소 초기화하여 사용해도 무방. 그러나 협업을 위해서는 Github 원격 저장소를 필수적으로 사용해야 한다.
+로컬에서 초기화한 저장소를 Github에 올리기 위해선 먼저 Github에 저장소를 만들어야 한다.
+
+git remote add origin https://github.com/clintkslee/study_Git.git
+git branch -M main
+git push -u origin main
+
+Github 저장소에 .gitignore 파일이 추가된 것을 확인할 수 있다.
+
+
+4. 이미 작업 중인 디렉터리를 git 저장소로 만들기
+$ ls
+file1.txt	file2.txt
+$ git init
+$ git add .
+$ git commit -m "Add file1.txt, file2.txt"
+
+
+5. Git 저장소 삭제 방법
+로컬에서 Git 저장소의 .git 디렉터리 삭제
+$ rm -rf .git
+이후 git status 시 더이상 Git 저장소가 아니므로 에러 메시지가 나타난다. 로컬 프로젝트에서 .git 디렉터리 삭제 시 복구 방법이 없으므로 Github 에 백업 권장.
+
+
+참조
+https://www.lainyzine.com/ko/article/git-init-how-to-initialize-git-repository/
