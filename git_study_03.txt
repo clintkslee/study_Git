@@ -4,7 +4,7 @@ $ git add (파일명) 또는 git add .	// 생성, 수정한 로컬 파일을 스
 $ git commit -m "커밋 메시지"		
 $ git push origin main			// origin 이라는 원격저장소의 main 브랜치에 push한다.
 ...
-$ git fetch origin
+$ git fetch origin          //
 $ git pull origin main			// origin 이라는 원격저장소에서 최신화 된 파일을 가져온다.
 ...
 
