@@ -1,0 +1,13 @@
+다음 공부 내용
+
+브랜치
+
+fetch, pull
+
+checkout
+
+
+참조
+https://tagilog.tistory.com/377
+https://www.lainyzine.com/ko/article/summary-of-how-to-use-git-for-source-code-management/#git-설정과-기초-편
+해당 링크 git 활용편 이하 필요
