@@ -1,3 +1,40 @@
+* branch 생성
+
+git branch
+로컬저장소 브랜치 확인
+
+git branch -r
+원격저장소 브랜치 확인
+
+git branch -a
+모든 브랜치 확인(로컬, 원격)
+
+git branch mybranch
+로컬저장소에 브랜치 생성
+
+* branch 전환
+
+git checkout mybranch
+mybranch로 브랜치 전환
+
+git checkout -b mybranch2
+mybranch2 브랜치 생성 후 mybranch2로 브랜치 전환
+
+* branch 삭제
+
+git checkout mybranch
+브랜치 삭제 위해서 다른 브랜치로 전환
+
+git branch --delete mybranch2
+mybranch2 브랜치 삭제
+
+* 특정 branch 에 push 하는법
+
+
+
+
+
+
 다음 공부 내용
 
 브랜치
