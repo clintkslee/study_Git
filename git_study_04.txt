@@ -48,8 +48,5 @@ main에 mybranch 병합
 3. git branch -d mybranch
 필요없어진 mybranch 삭제
 
-
-참조
-https://tagilog.tistory.com/377
-https://www.lainyzine.com/ko/article/summary-of-how-to-use-git-for-source-code-management/#git-설정과-기초-편
-해당 링크 git 활용편 이하 필요
+4. git push
+원격 저장소에 반영
