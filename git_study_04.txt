@@ -48,5 +48,36 @@ main에 mybranch 병합
 3. git branch -d mybranch
 필요없어진 mybranch 삭제
 
-4. git push
+4. git push origin main
 원격 저장소에 반영
+-> 이 경우 로컬저장소에서 merge후 원격저장소 main 브랜치에 push 한 상황
+-> 그러나 협업 시 개발자들은 각자 자신의 브랜치에 push 후 원격저장소에서 merge한다.
+
+* 협업 시 branch 사용 
+
+1. 개발자는 원격저장소의 main 브랜치를 pull
+git pull origin main
+
+2. 로컬에서 새로운 브랜치 생성하여 작업
+git checkout -b mybranch3
+
+3. 작업 완료 후 원격저장소에 push
+git push -u origin mybranch3 (원격저장소에 새 브랜치 생성된다.)
+
+4. 동료들과 코드 리뷰 후 github 상에서 main브랜치와 mybranch3를 merge
+
+5. 원격저장소 관리를 위해 필요없어진 mybranch3 삭제
+git push origin -d mybranch3 (혹은 로컬에서 main을 pull 후 mybranch3로 push하여 원격상의 mybranch3를 최신상태(=main)로 유지하는 방법도 있으나 굳이..?)
+
+
+
+
+
+
+
+
+
+
+
+
+
