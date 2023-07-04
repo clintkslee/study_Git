@@ -25,23 +25,28 @@ mybranch2 브랜치 생성 후 mybranch2로 브랜치 전환
 git checkout mybranch
 브랜치 삭제 위해서 다른 브랜치로 전환
 
-git branch --delete mybranch2
+git branch -d mybranch2
 mybranch2 브랜치 삭제
 
 * 특정 branch 에 push 하는법
 
+git commit origin mybranch
+원격저장소 origin의 mybranch 브랜치에 push (로컬브랜치명도 mybranch여야 함)
+
+git commit origin mybranch:main
+로컬저장소의 mybranch 브랜치에서 원격저장소 origin의 main 브랜치에 push
 
 
+* merge 방법
 
+1. git checkout main
+주가 될 브랜치로 전환
 
+2. git merge mybranch
+main에 mybranch 병합
 
-다음 공부 내용
-
-브랜치
-
-fetch, pull
-
-checkout
+3. git branch -d mybranch
+필요없어진 mybranch 삭제
 
 
 참조
