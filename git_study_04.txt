@@ -66,7 +66,7 @@ git push -u origin mybranch3 (원격저장소에 새 브랜치 생성된다.)
 
 4. 동료들과 코드 리뷰 후 github 상에서 main브랜치와 mybranch3를 merge
 - 상단 메뉴에서 "Pull requests" 탭 선택
-- "New pull request" 버xms 클릭
+- "New pull request" 버튼 클릭
 - 비교할 브랜치 선택
 	"base" 브랜치 : main브랜치 선택
 	"compare" 브랜치 : mybranch3 선택
