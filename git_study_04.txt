@@ -57,6 +57,7 @@ main에 mybranch 병합
 
 1. 개발자는 원격저장소의 main 브랜치를 pull
 git pull origin main
+( 특정 브랜치에 pull 시 git pull origin <branch name> )
 
 2. 로컬에서 새로운 브랜치 생성하여 작업
 git checkout -b mybranch3
