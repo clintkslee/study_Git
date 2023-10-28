@@ -1,0 +1,49 @@
+*** Fork 실습 *** 
+
+1. Fork
+> 내 원격저장소로 포크
+> Fork : organization -> clintkslee
+
+> 로컬로 클론
+$ git clone https://github.com/clintkslee/Repo_ForkTest.git
+
+> 로컬에서 새 브랜치 생성 및 파일에 내용 추가
+$ git checkout -b myrepo
+
+> 내 원격저장소에 푸쉬 (원격 저장소에 동명의 브랜치 생성)
+$ git add .
+$ git commit -m "fork"
+$ git push origin myrepo
+
+> 포크한 저장소, 생성한 브랜치에서 풀 리퀘스트 생성
+> OrganizationForkTest/Repo_ForkTest main 브랜치 <- clintkslee/Repo_ForkTest myrepo 브랜치
+
+> 원본 저장소에서 풀 리퀘스트 머지
+> 머지 승인 시 포크 저장소 myrepo 브랜치에서 수정한 내용이 원본 저장소에 반영
+
+> 포크한 저장소에서 Sync fork 시 원본 저장소와 동일하게 업데이트
+> 풀 리퀘스트 승인 된 브랜치 삭제해도 무방
+> 포크한 저장소도 삭제해도 무방
+*	*	*	*	*	*	*	
+
+2. pull request 후 commit 시 상태
+$ git add .
+$ git commit -m "fork2"
+$ git push origin myrepo2
+> 풀 리퀘스트 생성
+> OrganizationForkTest/Repo_ForkTest main 브랜치 <- clintkslee/Repo_ForkTest myrepo2 브랜치
+/* 여기까지가 pull request 할 때 까지 추가된 내용 */
+
+/* 이하 내용은 pull request 후 새 commit 위해 작성된 내용 */
+$ git add .
+$ git commit -m "new commit after pull request"
+$ git push origin myrepo2
+
+/* pull request 이후 해당 branch 에 새 commit 시, pull request 에 commit 이 누적하여 보여진다. */
+$ git add .
+$ git commit -m "second commit after pull request"
+$ git push origin myrepo2
+
+
+
+
