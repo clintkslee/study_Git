@@ -44,6 +44,12 @@ $ git add .
 $ git commit -m "second commit after pull request"
 $ git push origin myrepo2
 
-
+여러 번 commit 후 PR 시, PR에 commit 들이 보여진다.
+> fork 한 저장소 clone
+> 첫번 째 commit 
+> 두번 째 commit
+> 세번 째 commit
+> Pull Request
+> 결과 : OrganizationForkTest/Repo_ForkTest 에 PR 후 확인해보니 세 개의 commit 모두 해당 PR에 나타난다.
 
 
